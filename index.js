@@ -31,12 +31,10 @@ form.addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
     y=inputField.value;
 // Content script
-alert(inputField.value);
     // fetch("http://localhost:3080/submit", {
       fetch("https://whatsapp-automation-chrome-extension-4jal.vercel.app/submit", {
 
   method: "POST",
-  mode: 'no-cors',
   headers: {
     'Content-Type': 'application/json'
   },
@@ -47,7 +45,7 @@ alert(inputField.value);
     console.log(data);
   })
   .catch(error => {
-    console.error(error);
+    console.log(error);
   });
 
 });
