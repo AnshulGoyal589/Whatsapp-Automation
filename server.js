@@ -92,7 +92,9 @@ function generateRandomNumbersWithSum(n, m) {
 //     }
 // });
 
-
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
 app.post('/sendFile', upload.single('file'), async (req, res) => {
     const { message, phoneNumbers ,groupNames , sliderValue , id} = req.body;
     const client = getClient(id);
