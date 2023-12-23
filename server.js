@@ -39,6 +39,9 @@ app.options('*', cors());
 
 app.use(express.json()); 
 
+
+console.log("EEEUUURRREEKKKAAA");
+
 function generateRandomNumbersWithSum(n, m) {
     let numbers = [];
   
