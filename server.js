@@ -216,7 +216,7 @@ const getClient = (clientId) => {
 
 
 
-app.post('https://whatsapp-automation-chrome-extension-4jal.vercel.app/submit', async(req, res) => {
+app.post('/submit', async(req, res) => {
     const {message} = req.body;
     const client = getClient(message);
     t=client;
