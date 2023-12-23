@@ -99,6 +99,7 @@ app.post('/sendFile', upload.single('file'), async (req, res) => {
     const { message, phoneNumbers ,groupNames , sliderValue , id} = req.body;
     const client = getClient(id);
     t=client;
+    console.log(client);
     const delay = parseInt(sliderValue, 10);
     if(phoneNumbers.length===1){ 
         try { 
