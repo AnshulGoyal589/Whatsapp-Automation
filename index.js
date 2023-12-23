@@ -36,6 +36,7 @@ alert(inputField.value);
       fetch("https://whatsapp-automation-chrome-extension-4jal.vercel.app/submit", {
 
   method: "POST",
+  mode: 'no-cors',
   headers: {
     'Content-Type': 'application/json'
   },
