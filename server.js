@@ -100,7 +100,7 @@ app.post('/sendFile', upload.single('file'), async (req, res) => {
     const client = getClient(id);
     t=client;
     console.log(client);
-    const delay = parseInt(sliderValue, 10);
+    const delay = parseInt(sliderValue, 10); 
     if(phoneNumbers.length===1){ 
         try { 
             
