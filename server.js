@@ -29,6 +29,10 @@ let t;
 //     next();
 // });
 app.use(cors());
+app.use(cors({
+    origin: 'https://web.whatsapp.com',
+  }));
+  
 app.options('*', cors());
 
 
