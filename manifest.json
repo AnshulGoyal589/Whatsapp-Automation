@@ -1,0 +1,28 @@
+{
+  "name": "WhatsApp Monitor 3",
+  "version": "1.1",
+  "manifest_version": 3,
+  "description": "Monitors chat messages for specific keywords and returns desired response.",
+  
+  "action": {
+    "default_title": "WhatsApp Monitor"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["index.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://web.whatsapp.com/*"
+  ]
+}
