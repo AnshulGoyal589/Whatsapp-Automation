@@ -29,7 +29,7 @@ let t;
 //     next();
 // });
 app.use(cors());
-// app.options('*', cors());
+app.options('*', cors());
 
 
 app.use(express.json()); 
@@ -57,32 +57,32 @@ function generateRandomNumbersWithSum(n, m) {
   
 
 
-app.post('/sendMessage', async (req, res) => {
-    const { phoneNumbers, message } = req.body;
+// app.post('/sendMessage', async (req, res) => {
+//     const { phoneNumbers, message } = req.body;
 
-    try {
+//     try {
         
-        for (const phoneNumber of phoneNumbers) {
-            const chatId = `91${phoneNumber}@c.us`;
+//         for (const phoneNumber of phoneNumbers) {
+//             const chatId = `91${phoneNumber}@c.us`;
 
-            try {
-                const chat = await client.getChatById(chatId);
+//             try {
+//                 const chat = await client.getChatById(chatId);
 
-                await chat.sendMessage(message);
+//                 await chat.sendMessage(message);
 
-                console.log(`Message sent successfully to ${phoneNumber}`);
-            } catch (error) {
-                console.error(`Error sending WhatsApp message to ${phoneNumber}:`, error);
+//                 console.log(`Message sent successfully to ${phoneNumber}`);
+//             } catch (error) {
+//                 console.error(`Error sending WhatsApp message to ${phoneNumber}:`, error);
                 
-            }
-        }
+//             }
+//         }
 
-        res.json({ message: 'Messages sent successfully' });
-    } catch (error) {
-        console.error('Error sending WhatsApp messages:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
-});
+//         res.json({ message: 'Messages sent successfully' });
+//     } catch (error) {
+//         console.error('Error sending WhatsApp messages:', error);
+//         res.status(500).json({ error: 'Internal Server Error' });
+//     }
+// });
 
 
 app.post('/sendFile', upload.single('file'), async (req, res) => {
@@ -90,7 +90,7 @@ app.post('/sendFile', upload.single('file'), async (req, res) => {
     const client = getClient(id);
     t=client;
     const delay = parseInt(sliderValue, 10);
-    if(phoneNumbers.length===1){
+    if(phoneNumbers.length===1){ 
         try { 
             
             const chats = await t.getChats();

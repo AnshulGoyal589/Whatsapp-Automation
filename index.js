@@ -31,9 +31,10 @@ form.addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
     y=inputField.value;
 // Content script
-    // alert('Form submitted!');
-    // Send a POST request to the server
-    fetch("http://localhost:3080/submit", {
+alert(inputField.value);
+    // fetch("http://localhost:3080/submit", {
+      fetch("https://whatsapp-automation-chrome-extension-4jal.vercel.app/submit", {
+
   method: "POST",
   headers: {
     'Content-Type': 'application/json'
